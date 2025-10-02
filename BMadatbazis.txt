@@ -1,36 +1,36 @@
-2,
+-- 2,
 
 SELECT nev from diakok where telepules = "Barnamalom";
 
-3,
+-- 3,
 
 SELECT datum, terem, orasorszam from orak where targy = "angol"
 order by orasorszam ASC;
 
-4,
+-- 4,
 
 SELECT csoport, targy, datum 
 FROM orak 
 WHERE csoport LIKE "9%" AND (targy = "matematika" OR targy = "fizika");
 
-5,
+-- 5,
 
 SELECT COUNT(nev), telepules FROM diakok 
 group by telepules 
 order by COUNT(nev) DESC;
 
-6,
+-- 6,
 
 SELECT targy from orak GROUP by targy ASC;
 
-7,
+-- 7,
 
 SELECT diakok.nev, diakok.email, diakok.telefon from diakok 
 inner join kapcsolo on kapcsolo.diakid = diakok.id 
 inner join orak on kapcsolo.oraid = orak.id
 WHERE (orak.tanar = "Angol Anna" and orak.datum = "2028.11.10." );
 
-8,
+-- 8,
 
 SELECT diakok.nev from diakok 
 WHERE diakok.telepules = (
@@ -39,7 +39,7 @@ WHERE diakok.telepules = (
 )
 and diakok.nev != "Majer Melinda";
 
-9,
+-- 9,
 SELECT datum, csoport, targy, tanar, ferohely - COUNT(k.id) AS szabad
 FROM orak o
 LEFT JOIN kapcsolo k ON o.id = k.oraid
